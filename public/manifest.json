@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Rank by Comparing",
+  "name": "Sort items of a category to determine the best from the worst.",
   "icons": [
     {
       "src": "favicon.ico",

@@ -1,0 +1,24 @@
+.ResultsView {
+    display: block;
+    text-align: center;
+}
+
+.resultContainer {
+    display: inline-block;
+    width: 15rem;
+}
+
+.result {
+    display: grid;
+    grid-template-columns: 10rem 10rem;
+    grid-template-rows: 6rem;
+}
+
+.resultData * {
+    margin: 0 1rem;
+    text-align: left;
+}
+
+.ResultsView img {
+    height: 100%;
+}

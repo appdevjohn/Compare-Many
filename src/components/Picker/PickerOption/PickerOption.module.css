@@ -1,0 +1,25 @@
+.PickerOption {
+    display: inline-block;
+    width: 30%;
+    margin: 1rem;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.imageBox {
+    height: 24rem;
+    width: 100%;
+    border-radius: 8px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.imageCaption {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.PickerOption:hover {
+    transform: scale(1.05);
+}

@@ -24,8 +24,12 @@
     transform: scale(1.05);
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 46rem) {
     .PickerOption {
         width: 50%;
+    }
+
+    .imageBox {
+        height: 16rem;
     }
 }

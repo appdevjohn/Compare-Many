@@ -23,3 +23,9 @@
 .PickerOption:hover {
     transform: scale(1.05);
 }
+
+@media (max-width: 40rem) {
+    .PickerOption {
+        width: 50%;
+    }
+}

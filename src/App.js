@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import OptionView from './containers/OptionView/OptionView';
@@ -16,6 +17,17 @@ class App extends Component {
     }
   }
 
+  componentDidUpdate = (prevProps) => {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      const topicID = this.props.location.pathname.substring(1);
+      this.topicPickedHandler(topicID);
+    }
+  }
+
+  /**
+   * Populates the options states with data about what is being compared.
+   * @param {String} id The id of the topic in Firestore.
+   */
   getTopicOptions = id => {
     return new Promise((resolve, reject) => {
       axios.get('/topics/' + id).then(response => {
@@ -65,12 +77,16 @@ class App extends Component {
     });
   }
 
+  /**
+   * Handles the link click of the topics in the Nav bar.
+   * @param {String} id The id of the topic in Firestore.
+   */
   topicPickedHandler = id => {
     this.setState({
       options: [],
       optionCombos: []
     });
-    
+
     this.getTopicOptions(id).then(newOptions => {
       this.setState(newOptions);
     })
@@ -146,4 +162,4 @@ const shuffle = (array) => {
   return array;
 }
 
-export default App;
+export default withRouter(App);
